@@ -31,7 +31,7 @@ public class MainController {
             name = "From date",
             value = "From date",
             required = true) @PathVariable final String from) {
-        return new EETResponseListDTO();
+        return new EETResponseListDTO(eetService.findAll());
     }
 
     @RequestMapping(value = "/eet/add", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
