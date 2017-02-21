@@ -1,0 +1,15 @@
+spring:
+    datasource:
+        database: H2
+        url: jdbc:h2:mem:eet;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1;MVCC=true
+        driverClassName: org.h2.Driver
+        username: sa
+        password:
+        generateDdl: true
+        initialize: true
+    jackson:
+        date-format: yyyy-MM-dd HH:mm:ss.SSSZ
+    jpa:
+        hibernate:
+            ddl-auto: create-drop
+

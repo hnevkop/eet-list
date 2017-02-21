@@ -11,10 +11,10 @@ import java.util.Arrays;
 
 @SpringBootApplication
 @EnableSwagger2
-public class EetListApplication {
+public class EETApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(EetListApplication.class, args);
+        SpringApplication.run(EETApplication.class, args);
     }
 
     @Bean
