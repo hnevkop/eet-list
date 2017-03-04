@@ -1,10 +1,9 @@
 package com.hnevkop.eet.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Sale {
@@ -23,41 +22,44 @@ public class Sale {
 
     private String dicPoverujiciho;
 
-    private Integer idPokladny;
+    private String idPokladny;
 
     private String poradoveCislo;
 
     private Date datumTrzby;
 
-    private Float celkovaTrzba;
+    private BigDecimal celkovaTrzba;
 
-    private Float zakladNepodlehajiciDph;
+    private BigDecimal zakladNepodlehajiciDph;
 
-    private Float zakladDan1;
+    private BigDecimal zakladDan1;
 
-    private Float dan1;
+    private BigDecimal dan1;
 
-    private Float zakladDan2;
+    private BigDecimal zakladDan2;
 
-    private Float dan2;
+    private BigDecimal dan2;
 
-    private Float zakladDan3;
+    private BigDecimal zakladDan3;
 
-    private Float dan3;
+    private BigDecimal dan3;
 
-    private Float cestovniSluzba;
+    private BigDecimal cestovniSluzba;
 
-    private Float pouzitZbozi1;
+    private BigDecimal pouzitZbozi1;
 
-    private Float pouzitZbozi2;
+    private BigDecimal pouzitZbozi2;
 
-    private Float pouzitZbozi3;
+    private BigDecimal pouzitZbozi3;
 
-    private Float urcenoCerpZust;
+    private BigDecimal urcenoCerpZust;
 
-    private Float cerpZustatku;
+    private BigDecimal cerpZustatku;
 
     private boolean rezim;
+
+    @Embedded
+    private List<SaleItem> items;
 
     public String getUuidZpravy() {
         return uuidZpravy;
@@ -99,11 +101,11 @@ public class Sale {
         this.dicPoverujiciho = dicPoverujiciho;
     }
 
-    public Integer getIdPokladny() {
+    public String getIdPokladny() {
         return idPokladny;
     }
 
-    public void setIdPokladny(Integer idPokladny) {
+    public void setIdPokladny(String idPokladny) {
         this.idPokladny = idPokladny;
     }
 
@@ -123,115 +125,115 @@ public class Sale {
         this.datumTrzby = datumTrzby;
     }
 
-    public Float getCelkovaTrzba() {
+    public BigDecimal getCelkovaTrzba() {
         return celkovaTrzba;
     }
 
-    public void setCelkovaTrzba(Float celkovaTrzba) {
+    public void setCelkovaTrzba(BigDecimal celkovaTrzba) {
         this.celkovaTrzba = celkovaTrzba;
     }
 
-    public Float getZakladNepodlehajiciDph() {
+    public BigDecimal getZakladNepodlehajiciDph() {
         return zakladNepodlehajiciDph;
     }
 
-    public void setZakladNepodlehajiciDph(Float zakladNepodlehajiciDph) {
+    public void setZakladNepodlehajiciDph(BigDecimal zakladNepodlehajiciDph) {
         this.zakladNepodlehajiciDph = zakladNepodlehajiciDph;
     }
 
-    public Float getZakladDan1() {
+    public BigDecimal getZakladDan1() {
         return zakladDan1;
     }
 
-    public void setZakladDan1(Float zakladDan1) {
+    public void setZakladDan1(BigDecimal zakladDan1) {
         this.zakladDan1 = zakladDan1;
     }
 
-    public Float getDan1() {
+    public BigDecimal getDan1() {
         return dan1;
     }
 
-    public void setDan1(Float dan1) {
+    public void setDan1(BigDecimal dan1) {
         this.dan1 = dan1;
     }
 
-    public Float getZakladDan2() {
+    public BigDecimal getZakladDan2() {
         return zakladDan2;
     }
 
-    public void setZakladDan2(Float zakladDan2) {
+    public void setZakladDan2(BigDecimal zakladDan2) {
         this.zakladDan2 = zakladDan2;
     }
 
-    public Float getDan2() {
+    public BigDecimal getDan2() {
         return dan2;
     }
 
-    public void setDan2(Float dan2) {
+    public void setDan2(BigDecimal dan2) {
         this.dan2 = dan2;
     }
 
-    public Float getZakladDan3() {
+    public BigDecimal getZakladDan3() {
         return zakladDan3;
     }
 
-    public void setZakladDan3(Float zakladDan3) {
+    public void setZakladDan3(BigDecimal zakladDan3) {
         this.zakladDan3 = zakladDan3;
     }
 
-    public Float getDan3() {
+    public BigDecimal getDan3() {
         return dan3;
     }
 
-    public void setDan3(Float dan3) {
+    public void setDan3(BigDecimal dan3) {
         this.dan3 = dan3;
     }
 
-    public Float getCestovniSluzba() {
+    public BigDecimal getCestovniSluzba() {
         return cestovniSluzba;
     }
 
-    public void setCestovniSluzba(Float cestovniSluzba) {
+    public void setCestovniSluzba(BigDecimal cestovniSluzba) {
         this.cestovniSluzba = cestovniSluzba;
     }
 
-    public Float getPouzitZbozi1() {
+    public BigDecimal getPouzitZbozi1() {
         return pouzitZbozi1;
     }
 
-    public void setPouzitZbozi1(Float pouzitZbozi1) {
+    public void setPouzitZbozi1(BigDecimal pouzitZbozi1) {
         this.pouzitZbozi1 = pouzitZbozi1;
     }
 
-    public Float getPouzitZbozi2() {
+    public BigDecimal getPouzitZbozi2() {
         return pouzitZbozi2;
     }
 
-    public void setPouzitZbozi2(Float pouzitZbozi2) {
+    public void setPouzitZbozi2(BigDecimal pouzitZbozi2) {
         this.pouzitZbozi2 = pouzitZbozi2;
     }
 
-    public Float getPouzitZbozi3() {
+    public BigDecimal getPouzitZbozi3() {
         return pouzitZbozi3;
     }
 
-    public void setPouzitZbozi3(Float pouzitZbozi3) {
+    public void setPouzitZbozi3(BigDecimal pouzitZbozi3) {
         this.pouzitZbozi3 = pouzitZbozi3;
     }
 
-    public Float getUrcenoCerpZust() {
+    public BigDecimal getUrcenoCerpZust() {
         return urcenoCerpZust;
     }
 
-    public void setUrcenoCerpZust(Float urcenoCerpZust) {
+    public void setUrcenoCerpZust(BigDecimal urcenoCerpZust) {
         this.urcenoCerpZust = urcenoCerpZust;
     }
 
-    public Float getCerpZustatku() {
+    public BigDecimal getCerpZustatku() {
         return cerpZustatku;
     }
 
-    public void setCerpZustatku(Float cerpZustatku) {
+    public void setCerpZustatku(BigDecimal cerpZustatku) {
         this.cerpZustatku = cerpZustatku;
     }
 
@@ -243,4 +245,11 @@ public class Sale {
         this.rezim = rezim;
     }
 
+    public List<SaleItem> getItems() {
+        return items;
+    }
+
+    public void setItems(List<SaleItem> items) {
+        this.items = items;
+    }
 }

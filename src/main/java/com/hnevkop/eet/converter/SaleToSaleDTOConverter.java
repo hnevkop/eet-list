@@ -14,3 +14,6 @@ public class SaleToSaleDTOConverter implements Converter<Sale, SaleDTO> {
         return saleDTO;
     }
 }
+
+
+
